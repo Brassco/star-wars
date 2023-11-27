@@ -1,4 +1,4 @@
-import React, {JSX} from 'react';
+import React, { JSX } from "react";
 import {
   StyleSheet,
   View,
@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   SafeAreaView,
   ActivityIndicator,
-} from 'react-native';
+} from "react-native";
 
 //Components
-import {ListItem, Paginator} from '@src/components';
+import { ListItem, Paginator } from "@src/components";
 
 //Types
-import {PeoplesListProps} from '@src/ts/types';
+import { PeoplesListProps } from "@src/ts/types";
 
 const EmptyList = (): JSX.Element => {
   return (
@@ -53,10 +53,6 @@ const MainScreen = ({
 
   return (
     <SafeAreaView style={content}>
-      <View style={headerContainer}>
-        <Text>Star Wars</Text>
-      </View>
-
       <View style={counters}>
         <View style={counterContainer}>
           <Text style={counterText}>{maleCounter}</Text>
@@ -88,11 +84,11 @@ const MainScreen = ({
           <Text style={tableHeaderText}>Gender</Text>
         </View>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={data}
-          keyExtractor={item => item.name}
-          renderItem={({item, index}) => (
+          keyExtractor={(item) => item.name}
+          renderItem={({ item, index }) => (
             <ListItem toggleFavorite={toggleFavorite} item={item} />
           )}
           ListEmptyComponent={<EmptyList />}
@@ -114,31 +110,31 @@ export default MainScreen;
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   headerContainer: {
     height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   headerText: {},
   counters: {
     // height: 60,
-    justifyContent: 'space-between',
-    alingItems: 'center',
-    flexDirection: 'row',
+    justifyContent: "space-between",
+    alingItems: "center",
+    flexDirection: "row",
     paddingHorizontal: 10,
   },
   counterText: {
     fontSize: 30,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   counterLabel: {},
   counterContainer: {
     padding: 10,
     borderRadius: 4,
     borderBottomWidth: 1,
-    borderColor: '#8f8f8f',
+    borderColor: "#8f8f8f",
     flex: 1,
     marginHorizontal: 4,
   },
@@ -150,48 +146,48 @@ const styles = StyleSheet.create({
   },
   resetButtonWrapper: {
     height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginVertical: 10,
   },
   resetButtonText: {
     fontSize: 20,
-    fontWeight: '600',
-    color: '#DB3736',
+    fontWeight: "600",
+    color: "#DB3736",
   },
   resetButton: {
     flex: 1,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#DB3736',
-    justifyContent: 'center',
-    alignItems: 'center',
+    borderColor: "#DB3736",
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 10,
   },
   tableHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "flex-start",
     paddingHorizontal: 4,
     paddingVertical: 5,
     marginTop: 10,
   },
   tableHeaderText: {
     fontSize: 20,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   favoriteCell: {
     width: 40,
   },
   cell: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
+    justifyContent: "center",
+    alignItems: "flex-start",
     paddingHorizontal: 5,
   },
   emptyListContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
