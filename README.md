@@ -12,6 +12,12 @@ npm install
 yarn install
 ```
 
+Install Pods for iOS
+
+```
+cd ios/ && pod install
+```
+
 To start Metro, run:
 
 ```
